@@ -1,5 +1,22 @@
 import z from 'zod'
 
+export enum SupportedMessage {
+    JoinRoom = "JOIN_ROOM",
+    SendMessage = "SEND_MESSAGE",
+    UpvoteMessage = "UPVOTE_MESSAGE"
+}
+
+export type IncomingMessage = {
+    type: SupportedMessage.JoinRoom,
+    payload: InitMessageType
+} | {
+    type: SupportedMessage.SendMessage,
+    payload: UserMessageType
+} | {
+    type: SupportedMessage.UpvoteMessage,
+    payload: UpvoteMessageType
+}
+
 export const InitMessage  = z.object({
     name: z.string(),
     userId: z.string(),

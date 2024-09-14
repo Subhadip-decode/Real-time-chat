@@ -8,9 +8,9 @@ class Store {
     }
     getChats(room, limit, offset) {
     }
-    addChat(room, limit, offset) {
+    addChat(userId, name, room, message) {
     }
-    upvote(room, chatId) {
+    upvote(userId, room, chatId) {
     }
 }
 exports.Store = Store;
